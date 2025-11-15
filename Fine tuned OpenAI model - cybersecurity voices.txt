@@ -1,0 +1,18 @@
+/* fine tuned model on cybersecurity voices */
+
+
+import openai
+
+openai.api_key = "your-api-key"
+
+response = openai.ChatCompletion.create(
+    model="ft:gpt-4.1-mini-2025-04-14:personal:cybersecurity:BO6AdQeJ",
+    messages=[
+        {"role": "user", "content": "Write a blog post about password managers."}
+    ],
+    temperature=0.7,
+    max_tokens=800
+)
+
+print(response['choices'][0]['message']['content'])
+
